@@ -1,0 +1,106 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    
+    <title>分类编辑</title>
+    
+    <link href="~/Content/x-admin.css" rel="stylesheet" />
+</head>
+<body>
+    @using Models;
+    @if (ViewData["CateE"] != null)
+    {
+        var a = (Category)ViewData["CateE"];
+        <div class="x-body">
+            <form>
+                <div class="layui-form-item">
+                    <label for="cname" class="layui-form-label">
+                        ID
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="cname" name="cname" required="" lay-verify="required"
+                               autocomplete="off" value="@a.Id" disabled="" class="layui-input">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="cname" class="layui-form-label">
+                        <span class="x-red">*</span>分类名
+                    </label>
+                    <div class="layui-input-inline">
+                        <input type="text" id="text" name="cname" required="" lay-verify="required"
+                               autocomplete="off" class="layui-input" value="@a.CategoryName">
+                    </div>
+                </div>
+
+                <div class="layui-form-item">
+                    <label class="layui-form-label">所属分类</label>
+                    <div class="layui-input-inline">
+                        @if (ViewData["selectlist"] != null)
+                        {
+                            @Html.DropDownList("fid", ViewData["selectlist"] as List<SelectListItem>)
+                        }
+                    </div>
+
+                </div>
+
+                <div class="layui-form-item">
+                    <label for="L_repass" class="layui-form-label">
+                    </label>
+                    <button class="layui-btn" lay-filter="save" lay-submit="">
+                        保存
+                    </button>
+                </div>
+            </form>
+
+        </div>
+        <script src="~/Scripts/jquery-1.5.1.js"></script>
+        <script>
+            $("#fid option[value='@a.CategoryName']").attr("selected","selected")
+        </script>
+        <script src="~/Content/lib/layui/layui.js"></script>
+        <script src="~/Scripts/x-layui.js"></script>
+        <script>
+            layui.use(['form', 'layer'], function () {
+                $ = layui.jquery;
+                var form = layui.form()
+                    , layer = layui.layer;
+
+
+                //监听提交
+                form.on('submit(save)', function (data) {
+                   
+                    var text = $("#text").val(); //得到修改的分类名
+                    var mytext = $("#fid").val(); //得到目标分类
+                    $.post("/Category/Update", { "id": @a.Id, "text": text, "mytext": mytext }, function (data) {
+                        if (data == "OK") {
+
+                            alert("修改成功");
+                            x_admin_close();  //关闭弹出窗口
+                            window.parent.location.reload();
+                        } else {
+                            alert("修改失败");
+                        }
+                    })
+                });
+
+
+            });
+        </script>
+        <script>
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
+    }
+</body>
+</html>

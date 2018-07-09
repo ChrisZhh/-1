@@ -1,0 +1,854 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props" Condition="Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{B2B32EC8-24D9-4B57-8073-3EB0FF3901AF}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MVCTestOA</RootNamespace>
+    <AssemblyName>MVCTestOA</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.4.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>..\packages\Microsoft.AspNet.Web.Optimization.1.1.3\lib\net40\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="WebGrease">
+      <Private>True</Private>
+      <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
+    </Reference>
+    <Reference Include="Antlr3.Runtime">
+      <Private>True</Private>
+      <HintPath>..\packages\Antlr.3.5.0.2\lib\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Diagnostics.DiagnosticSource">
+      <HintPath>..\packages\System.Diagnostics.DiagnosticSource.4.4.1\lib\net46\System.Diagnostics.DiagnosticSource.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.TelemetryCorrelation">
+      <HintPath>..\packages\Microsoft.AspNet.TelemetryCorrelation.1.0.0\lib\net45\Microsoft.AspNet.TelemetryCorrelation.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationInsights">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.2.5.1\lib\net46\Microsoft.ApplicationInsights.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Agent.Intercept">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Agent.Intercept.2.4.0\lib\net45\Microsoft.AI.Agent.Intercept.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.DependencyCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.DependencyCollector.2.5.1\lib\net45\Microsoft.AI.DependencyCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.PerfCounterCollector">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.PerfCounterCollector.2.5.1\lib\net45\Microsoft.AI.PerfCounterCollector.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.ServerTelemetryChannel">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.TelemetryChannel.2.5.1\lib\net45\Microsoft.AI.ServerTelemetryChannel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.WindowsServer">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.WindowsServer.2.5.1\lib\net45\Microsoft.AI.WindowsServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.AI.Web">
+      <HintPath>..\packages\Microsoft.ApplicationInsights.Web.2.5.1\lib\net45\Microsoft.AI.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\CategoryController.cs" />
+    <Compile Include="Controllers\CommentListController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="utf8-net\net\App_Code\Config.cs" />
+    <Compile Include="utf8-net\net\App_Code\ConfigHandler.cs" />
+    <Compile Include="utf8-net\net\App_Code\CrawlerHandler.cs" />
+    <Compile Include="utf8-net\net\App_Code\Handler.cs" />
+    <Compile Include="utf8-net\net\App_Code\ListFileHandler.cs" />
+    <Compile Include="utf8-net\net\App_Code\NotSupportedHandler.cs" />
+    <Compile Include="utf8-net\net\App_Code\PathFormater.cs" />
+    <Compile Include="utf8-net\net\App_Code\UploadHandler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Content\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Content\lib\bootstrap\js\npm.js" />
+    <Content Include="Content\lib\layui\css\layui.css" />
+    <Content Include="Content\lib\layui\css\modules\code.css" />
+    <Content Include="Content\lib\layui\css\modules\laydate\icon.png" />
+    <Content Include="Content\lib\layui\css\modules\laydate\laydate.css" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Content\lib\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Content\lib\layui\images\face\0.gif" />
+    <Content Include="Content\lib\layui\images\face\1.gif" />
+    <Content Include="Content\lib\layui\images\face\10.gif" />
+    <Content Include="Content\lib\layui\images\face\11.gif" />
+    <Content Include="Content\lib\layui\images\face\12.gif" />
+    <Content Include="Content\lib\layui\images\face\13.gif" />
+    <Content Include="Content\lib\layui\images\face\14.gif" />
+    <Content Include="Content\lib\layui\images\face\15.gif" />
+    <Content Include="Content\lib\layui\images\face\16.gif" />
+    <Content Include="Content\lib\layui\images\face\17.gif" />
+    <Content Include="Content\lib\layui\images\face\18.gif" />
+    <Content Include="Content\lib\layui\images\face\19.gif" />
+    <Content Include="Content\lib\layui\images\face\2.gif" />
+    <Content Include="Content\lib\layui\images\face\20.gif" />
+    <Content Include="Content\lib\layui\images\face\21.gif" />
+    <Content Include="Content\lib\layui\images\face\22.gif" />
+    <Content Include="Content\lib\layui\images\face\23.gif" />
+    <Content Include="Content\lib\layui\images\face\24.gif" />
+    <Content Include="Content\lib\layui\images\face\25.gif" />
+    <Content Include="Content\lib\layui\images\face\26.gif" />
+    <Content Include="Content\lib\layui\images\face\27.gif" />
+    <Content Include="Content\lib\layui\images\face\28.gif" />
+    <Content Include="Content\lib\layui\images\face\29.gif" />
+    <Content Include="Content\lib\layui\images\face\3.gif" />
+    <Content Include="Content\lib\layui\images\face\30.gif" />
+    <Content Include="Content\lib\layui\images\face\31.gif" />
+    <Content Include="Content\lib\layui\images\face\32.gif" />
+    <Content Include="Content\lib\layui\images\face\33.gif" />
+    <Content Include="Content\lib\layui\images\face\34.gif" />
+    <Content Include="Content\lib\layui\images\face\35.gif" />
+    <Content Include="Content\lib\layui\images\face\36.gif" />
+    <Content Include="Content\lib\layui\images\face\37.gif" />
+    <Content Include="Content\lib\layui\images\face\38.gif" />
+    <Content Include="Content\lib\layui\images\face\39.gif" />
+    <Content Include="Content\lib\layui\images\face\4.gif" />
+    <Content Include="Content\lib\layui\images\face\40.gif" />
+    <Content Include="Content\lib\layui\images\face\41.gif" />
+    <Content Include="Content\lib\layui\images\face\42.gif" />
+    <Content Include="Content\lib\layui\images\face\43.gif" />
+    <Content Include="Content\lib\layui\images\face\44.gif" />
+    <Content Include="Content\lib\layui\images\face\45.gif" />
+    <Content Include="Content\lib\layui\images\face\46.gif" />
+    <Content Include="Content\lib\layui\images\face\47.gif" />
+    <Content Include="Content\lib\layui\images\face\48.gif" />
+    <Content Include="Content\lib\layui\images\face\49.gif" />
+    <Content Include="Content\lib\layui\images\face\5.gif" />
+    <Content Include="Content\lib\layui\images\face\50.gif" />
+    <Content Include="Content\lib\layui\images\face\51.gif" />
+    <Content Include="Content\lib\layui\images\face\52.gif" />
+    <Content Include="Content\lib\layui\images\face\53.gif" />
+    <Content Include="Content\lib\layui\images\face\54.gif" />
+    <Content Include="Content\lib\layui\images\face\55.gif" />
+    <Content Include="Content\lib\layui\images\face\56.gif" />
+    <Content Include="Content\lib\layui\images\face\57.gif" />
+    <Content Include="Content\lib\layui\images\face\58.gif" />
+    <Content Include="Content\lib\layui\images\face\59.gif" />
+    <Content Include="Content\lib\layui\images\face\6.gif" />
+    <Content Include="Content\lib\layui\images\face\60.gif" />
+    <Content Include="Content\lib\layui\images\face\61.gif" />
+    <Content Include="Content\lib\layui\images\face\62.gif" />
+    <Content Include="Content\lib\layui\images\face\63.gif" />
+    <Content Include="Content\lib\layui\images\face\64.gif" />
+    <Content Include="Content\lib\layui\images\face\65.gif" />
+    <Content Include="Content\lib\layui\images\face\66.gif" />
+    <Content Include="Content\lib\layui\images\face\67.gif" />
+    <Content Include="Content\lib\layui\images\face\68.gif" />
+    <Content Include="Content\lib\layui\images\face\69.gif" />
+    <Content Include="Content\lib\layui\images\face\7.gif" />
+    <Content Include="Content\lib\layui\images\face\70.gif" />
+    <Content Include="Content\lib\layui\images\face\71.gif" />
+    <Content Include="Content\lib\layui\images\face\8.gif" />
+    <Content Include="Content\lib\layui\images\face\9.gif" />
+    <Content Include="Content\lib\layui\layui.js" />
+    <Content Include="Content\lib\layui\lay\dest\layui.all.js" />
+    <Content Include="Content\lib\layui\lay\lib\jquery.js" />
+    <Content Include="Content\lib\layui\lay\modules\code.js" />
+    <Content Include="Content\lib\layui\lay\modules\element.js" />
+    <Content Include="Content\lib\layui\lay\modules\flow.js" />
+    <Content Include="Content\lib\layui\lay\modules\form.js" />
+    <Content Include="Content\lib\layui\lay\modules\laydate.js" />
+    <Content Include="Content\lib\layui\lay\modules\layedit.js" />
+    <Content Include="Content\lib\layui\lay\modules\layer.js" />
+    <Content Include="Content\lib\layui\lay\modules\laypage.js" />
+    <Content Include="Content\lib\layui\lay\modules\laytpl.js" />
+    <Content Include="Content\lib\layui\lay\modules\tree.js" />
+    <Content Include="Content\lib\layui\lay\modules\upload.js" />
+    <Content Include="Content\lib\layui\lay\modules\util.js" />
+    <Content Include="Content\pageBar.css" />
+    <Content Include="Content\x-admin.css" />
+    <Content Include="favicon.ico" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Images\banner.png" />
+    <Content Include="Images\icon.png" />
+    <Content Include="Images\logo.png" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Content\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Content\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\lib\layui\font\iconfont.eot" />
+    <Content Include="Content\lib\layui\font\iconfont.svg" />
+    <Content Include="Content\lib\layui\font\iconfont.ttf" />
+    <Content Include="Content\lib\layui\font\iconfont.woff" />
+    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\jquery-1.5.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.js" />
+    <Content Include="Scripts\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\layui.js" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.min.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.css" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.min.css" />
+    <Content Include="Scripts\lib\bootstrap\js\bootstrap.js" />
+    <Content Include="Scripts\lib\bootstrap\js\bootstrap.min.js" />
+    <Content Include="Scripts\lib\bootstrap\js\npm.js" />
+    <Content Include="Scripts\lib\layui\css\layui.css" />
+    <Content Include="Scripts\lib\layui\css\modules\code.css" />
+    <Content Include="Scripts\lib\layui\css\modules\laydate\icon.png" />
+    <Content Include="Scripts\lib\layui\css\modules\laydate\laydate.css" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\icon-ext.png" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\icon.png" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\layer.css" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\loading-0.gif" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\loading-1.gif" />
+    <Content Include="Scripts\lib\layui\css\modules\layer\default\loading-2.gif" />
+    <Content Include="Scripts\lib\layui\images\face\0.gif" />
+    <Content Include="Scripts\lib\layui\images\face\1.gif" />
+    <Content Include="Scripts\lib\layui\images\face\10.gif" />
+    <Content Include="Scripts\lib\layui\images\face\11.gif" />
+    <Content Include="Scripts\lib\layui\images\face\12.gif" />
+    <Content Include="Scripts\lib\layui\images\face\13.gif" />
+    <Content Include="Scripts\lib\layui\images\face\14.gif" />
+    <Content Include="Scripts\lib\layui\images\face\15.gif" />
+    <Content Include="Scripts\lib\layui\images\face\16.gif" />
+    <Content Include="Scripts\lib\layui\images\face\17.gif" />
+    <Content Include="Scripts\lib\layui\images\face\18.gif" />
+    <Content Include="Scripts\lib\layui\images\face\19.gif" />
+    <Content Include="Scripts\lib\layui\images\face\2.gif" />
+    <Content Include="Scripts\lib\layui\images\face\20.gif" />
+    <Content Include="Scripts\lib\layui\images\face\21.gif" />
+    <Content Include="Scripts\lib\layui\images\face\22.gif" />
+    <Content Include="Scripts\lib\layui\images\face\23.gif" />
+    <Content Include="Scripts\lib\layui\images\face\24.gif" />
+    <Content Include="Scripts\lib\layui\images\face\25.gif" />
+    <Content Include="Scripts\lib\layui\images\face\26.gif" />
+    <Content Include="Scripts\lib\layui\images\face\27.gif" />
+    <Content Include="Scripts\lib\layui\images\face\28.gif" />
+    <Content Include="Scripts\lib\layui\images\face\29.gif" />
+    <Content Include="Scripts\lib\layui\images\face\3.gif" />
+    <Content Include="Scripts\lib\layui\images\face\30.gif" />
+    <Content Include="Scripts\lib\layui\images\face\31.gif" />
+    <Content Include="Scripts\lib\layui\images\face\32.gif" />
+    <Content Include="Scripts\lib\layui\images\face\33.gif" />
+    <Content Include="Scripts\lib\layui\images\face\34.gif" />
+    <Content Include="Scripts\lib\layui\images\face\35.gif" />
+    <Content Include="Scripts\lib\layui\images\face\36.gif" />
+    <Content Include="Scripts\lib\layui\images\face\37.gif" />
+    <Content Include="Scripts\lib\layui\images\face\38.gif" />
+    <Content Include="Scripts\lib\layui\images\face\39.gif" />
+    <Content Include="Scripts\lib\layui\images\face\4.gif" />
+    <Content Include="Scripts\lib\layui\images\face\40.gif" />
+    <Content Include="Scripts\lib\layui\images\face\41.gif" />
+    <Content Include="Scripts\lib\layui\images\face\42.gif" />
+    <Content Include="Scripts\lib\layui\images\face\43.gif" />
+    <Content Include="Scripts\lib\layui\images\face\44.gif" />
+    <Content Include="Scripts\lib\layui\images\face\45.gif" />
+    <Content Include="Scripts\lib\layui\images\face\46.gif" />
+    <Content Include="Scripts\lib\layui\images\face\47.gif" />
+    <Content Include="Scripts\lib\layui\images\face\48.gif" />
+    <Content Include="Scripts\lib\layui\images\face\49.gif" />
+    <Content Include="Scripts\lib\layui\images\face\5.gif" />
+    <Content Include="Scripts\lib\layui\images\face\50.gif" />
+    <Content Include="Scripts\lib\layui\images\face\51.gif" />
+    <Content Include="Scripts\lib\layui\images\face\52.gif" />
+    <Content Include="Scripts\lib\layui\images\face\53.gif" />
+    <Content Include="Scripts\lib\layui\images\face\54.gif" />
+    <Content Include="Scripts\lib\layui\images\face\55.gif" />
+    <Content Include="Scripts\lib\layui\images\face\56.gif" />
+    <Content Include="Scripts\lib\layui\images\face\57.gif" />
+    <Content Include="Scripts\lib\layui\images\face\58.gif" />
+    <Content Include="Scripts\lib\layui\images\face\59.gif" />
+    <Content Include="Scripts\lib\layui\images\face\6.gif" />
+    <Content Include="Scripts\lib\layui\images\face\60.gif" />
+    <Content Include="Scripts\lib\layui\images\face\61.gif" />
+    <Content Include="Scripts\lib\layui\images\face\62.gif" />
+    <Content Include="Scripts\lib\layui\images\face\63.gif" />
+    <Content Include="Scripts\lib\layui\images\face\64.gif" />
+    <Content Include="Scripts\lib\layui\images\face\65.gif" />
+    <Content Include="Scripts\lib\layui\images\face\66.gif" />
+    <Content Include="Scripts\lib\layui\images\face\67.gif" />
+    <Content Include="Scripts\lib\layui\images\face\68.gif" />
+    <Content Include="Scripts\lib\layui\images\face\69.gif" />
+    <Content Include="Scripts\lib\layui\images\face\7.gif" />
+    <Content Include="Scripts\lib\layui\images\face\70.gif" />
+    <Content Include="Scripts\lib\layui\images\face\71.gif" />
+    <Content Include="Scripts\lib\layui\images\face\8.gif" />
+    <Content Include="Scripts\lib\layui\images\face\9.gif" />
+    <Content Include="Scripts\lib\layui\layui.js" />
+    <Content Include="Scripts\lib\layui\lay\dest\layui.all.js" />
+    <Content Include="Scripts\lib\layui\lay\lib\jquery.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\code.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\element.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\flow.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\form.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\laydate.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\layedit.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\layer.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\laypage.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\laytpl.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\tree.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\upload.js" />
+    <Content Include="Scripts\lib\layui\lay\modules\util.js" />
+    <Content Include="Scripts\modernizr-2.8.3.js" />
+    <Content Include="Scripts\x-admin.js" />
+    <Content Include="Scripts\x-layui.js" />
+    <Content Include="utf8-net\dialogs\anchor\anchor.html" />
+    <Content Include="utf8-net\dialogs\attachment\attachment.css" />
+    <Content Include="utf8-net\dialogs\attachment\attachment.html" />
+    <Content Include="utf8-net\dialogs\attachment\attachment.js" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_chm.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_default.png" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_doc.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_exe.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_jpg.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_mp3.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_mv.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_pdf.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_ppt.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_psd.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_rar.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_txt.gif" />
+    <Content Include="utf8-net\dialogs\attachment\fileTypeImages\icon_xls.gif" />
+    <Content Include="utf8-net\dialogs\attachment\images\alignicon.gif" />
+    <Content Include="utf8-net\dialogs\attachment\images\alignicon.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\bg.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\file-icons.gif" />
+    <Content Include="utf8-net\dialogs\attachment\images\file-icons.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\icons.gif" />
+    <Content Include="utf8-net\dialogs\attachment\images\icons.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\image.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\progress.png" />
+    <Content Include="utf8-net\dialogs\attachment\images\success.gif" />
+    <Content Include="utf8-net\dialogs\attachment\images\success.png" />
+    <Content Include="utf8-net\dialogs\background\background.css" />
+    <Content Include="utf8-net\dialogs\background\background.html" />
+    <Content Include="utf8-net\dialogs\background\background.js" />
+    <Content Include="utf8-net\dialogs\background\images\bg.png" />
+    <Content Include="utf8-net\dialogs\background\images\success.png" />
+    <Content Include="utf8-net\dialogs\charts\chart.config.js" />
+    <Content Include="utf8-net\dialogs\charts\charts.css" />
+    <Content Include="utf8-net\dialogs\charts\charts.html" />
+    <Content Include="utf8-net\dialogs\charts\charts.js" />
+    <Content Include="utf8-net\dialogs\charts\images\charts0.png" />
+    <Content Include="utf8-net\dialogs\charts\images\charts1.png" />
+    <Content Include="utf8-net\dialogs\charts\images\charts2.png" />
+    <Content Include="utf8-net\dialogs\charts\images\charts3.png" />
+    <Content Include="utf8-net\dialogs\charts\images\charts4.png" />
+    <Content Include="utf8-net\dialogs\charts\images\charts5.png" />
+    <Content Include="utf8-net\dialogs\emotion\emotion.css" />
+    <Content Include="utf8-net\dialogs\emotion\emotion.html" />
+    <Content Include="utf8-net\dialogs\emotion\emotion.js" />
+    <Content Include="utf8-net\dialogs\emotion\images\0.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\bface.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\cface.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\fface.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\jxface2.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\neweditor-tab-bg.png" />
+    <Content Include="utf8-net\dialogs\emotion\images\tface.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\wface.gif" />
+    <Content Include="utf8-net\dialogs\emotion\images\yface.gif" />
+    <Content Include="utf8-net\dialogs\gmap\gmap.html" />
+    <Content Include="utf8-net\dialogs\help\help.css" />
+    <Content Include="utf8-net\dialogs\help\help.html" />
+    <Content Include="utf8-net\dialogs\help\help.js" />
+    <Content Include="utf8-net\dialogs\image\image.css" />
+    <Content Include="utf8-net\dialogs\image\image.html" />
+    <Content Include="utf8-net\dialogs\image\image.js" />
+    <Content Include="utf8-net\dialogs\image\images\alignicon.jpg" />
+    <Content Include="utf8-net\dialogs\image\images\bg.png" />
+    <Content Include="utf8-net\dialogs\image\images\icons.gif" />
+    <Content Include="utf8-net\dialogs\image\images\icons.png" />
+    <Content Include="utf8-net\dialogs\image\images\image.png" />
+    <Content Include="utf8-net\dialogs\image\images\progress.png" />
+    <Content Include="utf8-net\dialogs\image\images\success.gif" />
+    <Content Include="utf8-net\dialogs\image\images\success.png" />
+    <Content Include="utf8-net\dialogs\insertframe\insertframe.html" />
+    <Content Include="utf8-net\dialogs\internal.js" />
+    <Content Include="utf8-net\dialogs\link\link.html" />
+    <Content Include="utf8-net\dialogs\map\map.html" />
+    <Content Include="utf8-net\dialogs\map\show.html" />
+    <Content Include="utf8-net\dialogs\music\music.css" />
+    <Content Include="utf8-net\dialogs\music\music.html" />
+    <Content Include="utf8-net\dialogs\music\music.js" />
+    <Content Include="utf8-net\dialogs\preview\preview.html" />
+    <Content Include="utf8-net\dialogs\scrawl\images\addimg.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\brush.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\delimg.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\delimgH.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\empty.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\emptyH.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\eraser.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\redo.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\redoH.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\scale.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\scaleH.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\size.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\undo.png" />
+    <Content Include="utf8-net\dialogs\scrawl\images\undoH.png" />
+    <Content Include="utf8-net\dialogs\scrawl\scrawl.css" />
+    <Content Include="utf8-net\dialogs\scrawl\scrawl.html" />
+    <Content Include="utf8-net\dialogs\scrawl\scrawl.js" />
+    <Content Include="utf8-net\dialogs\searchreplace\searchreplace.html" />
+    <Content Include="utf8-net\dialogs\searchreplace\searchreplace.js" />
+    <Content Include="utf8-net\dialogs\snapscreen\snapscreen.html" />
+    <Content Include="utf8-net\dialogs\spechars\spechars.html" />
+    <Content Include="utf8-net\dialogs\spechars\spechars.js" />
+    <Content Include="utf8-net\dialogs\table\dragicon.png" />
+    <Content Include="utf8-net\dialogs\table\edittable.css" />
+    <Content Include="utf8-net\dialogs\table\edittable.html" />
+    <Content Include="utf8-net\dialogs\table\edittable.js" />
+    <Content Include="utf8-net\dialogs\table\edittd.html" />
+    <Content Include="utf8-net\dialogs\table\edittip.html" />
+    <Content Include="utf8-net\dialogs\template\config.js" />
+    <Content Include="utf8-net\dialogs\template\images\bg.gif" />
+    <Content Include="utf8-net\dialogs\template\images\pre0.png" />
+    <Content Include="utf8-net\dialogs\template\images\pre1.png" />
+    <Content Include="utf8-net\dialogs\template\images\pre2.png" />
+    <Content Include="utf8-net\dialogs\template\images\pre3.png" />
+    <Content Include="utf8-net\dialogs\template\images\pre4.png" />
+    <Content Include="utf8-net\dialogs\template\template.css" />
+    <Content Include="utf8-net\dialogs\template\template.html" />
+    <Content Include="utf8-net\dialogs\template\template.js" />
+    <Content Include="utf8-net\dialogs\video\images\bg.png" />
+    <Content Include="utf8-net\dialogs\video\images\center_focus.jpg" />
+    <Content Include="utf8-net\dialogs\video\images\file-icons.gif" />
+    <Content Include="utf8-net\dialogs\video\images\file-icons.png" />
+    <Content Include="utf8-net\dialogs\video\images\icons.gif" />
+    <Content Include="utf8-net\dialogs\video\images\icons.png" />
+    <Content Include="utf8-net\dialogs\video\images\image.png" />
+    <Content Include="utf8-net\dialogs\video\images\left_focus.jpg" />
+    <Content Include="utf8-net\dialogs\video\images\none_focus.jpg" />
+    <Content Include="utf8-net\dialogs\video\images\progress.png" />
+    <Content Include="utf8-net\dialogs\video\images\right_focus.jpg" />
+    <Content Include="utf8-net\dialogs\video\images\success.gif" />
+    <Content Include="utf8-net\dialogs\video\images\success.png" />
+    <Content Include="utf8-net\dialogs\video\video.css" />
+    <Content Include="utf8-net\dialogs\video\video.html" />
+    <Content Include="utf8-net\dialogs\video\video.js" />
+    <Content Include="utf8-net\dialogs\webapp\webapp.html" />
+    <Content Include="utf8-net\dialogs\wordimage\fClipboard_ueditor.swf" />
+    <Content Include="utf8-net\dialogs\wordimage\imageUploader.swf" />
+    <Content Include="utf8-net\dialogs\wordimage\tangram.js" />
+    <Content Include="utf8-net\dialogs\wordimage\wordimage.html" />
+    <Content Include="utf8-net\dialogs\wordimage\wordimage.js" />
+    <Content Include="utf8-net\index.html" />
+    <Content Include="utf8-net\lang\en\en.js" />
+    <Content Include="utf8-net\lang\en\images\addimage.png" />
+    <Content Include="utf8-net\lang\en\images\alldeletebtnhoverskin.png" />
+    <Content Include="utf8-net\lang\en\images\alldeletebtnupskin.png" />
+    <Content Include="utf8-net\lang\en\images\background.png" />
+    <Content Include="utf8-net\lang\en\images\button.png" />
+    <Content Include="utf8-net\lang\en\images\copy.png" />
+    <Content Include="utf8-net\lang\en\images\deletedisable.png" />
+    <Content Include="utf8-net\lang\en\images\deleteenable.png" />
+    <Content Include="utf8-net\lang\en\images\listbackground.png" />
+    <Content Include="utf8-net\lang\en\images\localimage.png" />
+    <Content Include="utf8-net\lang\en\images\music.png" />
+    <Content Include="utf8-net\lang\en\images\rotateleftdisable.png" />
+    <Content Include="utf8-net\lang\en\images\rotateleftenable.png" />
+    <Content Include="utf8-net\lang\en\images\rotaterightdisable.png" />
+    <Content Include="utf8-net\lang\en\images\rotaterightenable.png" />
+    <Content Include="utf8-net\lang\en\images\upload.png" />
+    <Content Include="utf8-net\lang\zh-cn\images\copy.png" />
+    <Content Include="utf8-net\lang\zh-cn\images\localimage.png" />
+    <Content Include="utf8-net\lang\zh-cn\images\music.png" />
+    <Content Include="utf8-net\lang\zh-cn\images\upload.png" />
+    <Content Include="utf8-net\lang\zh-cn\zh-cn.js" />
+    <Content Include="utf8-net\net\Bin\Newtonsoft.Json.dll" />
+    <Content Include="utf8-net\net\Bin\Newtonsoft.Json.pdb" />
+    <Content Include="utf8-net\net\Bin\Newtonsoft.Json.xml" />
+    <Content Include="utf8-net\net\net.sln" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571124640800174259796.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571128033494227979817.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571128039094542493143.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571128049895161992376.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571128056795561207529.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571180293883358308058.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571184400718244886081.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571186889060574766090.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571187587600526840778.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571191897447034496390.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571191908447668697451.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571191912747918981531.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571191919548308196684.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571290712698942278956.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571689933291386543676.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571754599554966017599.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180627\6366571776256007194081211.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366577646916702687446935.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366577967540341307304882.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366577968580300795823430.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366577970053485053641848.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366578008981311596687755.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579050146121026284567.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579530907919022661823.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559631661923196192.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559651163049437995.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559658263457180566.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559665063846395719.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559672164244138290.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579559678564617651615.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579726062981259671770.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366579726067781535657678.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580061351158649264200.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580244450131303787477.png" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580246108626167198344.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580457410311938031180.png" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580457713729289991432.png" />
+    <Content Include="utf8-net\net\upload\image\20180628\6366580457998345562480634.png" />
+    <Content Include="utf8-net\net\upload\image\20180629\6366588400583583314224568.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180629\6366588401276122927084103.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180629\6366588418024980908841587.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180629\6366588502201295517644801.jpg" />
+    <Content Include="utf8-net\net\upload\image\20180629\6366588594746888826698809.jpg" />
+    <Content Include="utf8-net\themes\default\css\ueditor.css" />
+    <Content Include="utf8-net\themes\default\css\ueditor.min.css" />
+    <Content Include="utf8-net\themes\default\dialogbase.css" />
+    <Content Include="utf8-net\themes\default\images\anchor.gif" />
+    <Content Include="utf8-net\themes\default\images\arrow.png" />
+    <Content Include="utf8-net\themes\default\images\arrow_down.png" />
+    <Content Include="utf8-net\themes\default\images\arrow_up.png" />
+    <Content Include="utf8-net\themes\default\images\button-bg.gif" />
+    <Content Include="utf8-net\themes\default\images\cancelbutton.gif" />
+    <Content Include="utf8-net\themes\default\images\charts.png" />
+    <Content Include="utf8-net\themes\default\images\cursor_h.gif" />
+    <Content Include="utf8-net\themes\default\images\cursor_h.png" />
+    <Content Include="utf8-net\themes\default\images\cursor_v.gif" />
+    <Content Include="utf8-net\themes\default\images\cursor_v.png" />
+    <Content Include="utf8-net\themes\default\images\dialog-title-bg.png" />
+    <Content Include="utf8-net\themes\default\images\filescan.png" />
+    <Content Include="utf8-net\themes\default\images\highlighted.gif" />
+    <Content Include="utf8-net\themes\default\images\icons-all.gif" />
+    <Content Include="utf8-net\themes\default\images\icons.gif" />
+    <Content Include="utf8-net\themes\default\images\icons.png" />
+    <Content Include="utf8-net\themes\default\images\loaderror.png" />
+    <Content Include="utf8-net\themes\default\images\loading.gif" />
+    <Content Include="utf8-net\themes\default\images\lock.gif" />
+    <Content Include="utf8-net\themes\default\images\neweditor-tab-bg.png" />
+    <Content Include="utf8-net\themes\default\images\pagebreak.gif" />
+    <Content Include="utf8-net\themes\default\images\scale.png" />
+    <Content Include="utf8-net\themes\default\images\sortable.png" />
+    <Content Include="utf8-net\themes\default\images\spacer.gif" />
+    <Content Include="utf8-net\themes\default\images\sparator_v.png" />
+    <Content Include="utf8-net\themes\default\images\table-cell-align.png" />
+    <Content Include="utf8-net\themes\default\images\tangram-colorpicker.png" />
+    <Content Include="utf8-net\themes\default\images\toolbar_bg.png" />
+    <Content Include="utf8-net\themes\default\images\unhighlighted.gif" />
+    <Content Include="utf8-net\themes\default\images\upload.png" />
+    <Content Include="utf8-net\themes\default\images\videologo.gif" />
+    <Content Include="utf8-net\themes\default\images\word.gif" />
+    <Content Include="utf8-net\themes\default\images\wordpaste.png" />
+    <Content Include="utf8-net\themes\iframe.css" />
+    <Content Include="utf8-net\third-party\codemirror\codemirror.css" />
+    <Content Include="utf8-net\third-party\codemirror\codemirror.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\mootools-adapter.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\mootools-adapter.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\prototype-adapter.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\prototype-adapter.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\standalone-framework.js" />
+    <Content Include="utf8-net\third-party\highcharts\adapters\standalone-framework.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\highcharts-more.js" />
+    <Content Include="utf8-net\third-party\highcharts\highcharts-more.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\highcharts.js" />
+    <Content Include="utf8-net\third-party\highcharts\highcharts.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\annotations.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\annotations.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\canvas-tools.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\canvas-tools.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\data.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\data.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\drilldown.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\drilldown.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\exporting.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\exporting.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\funnel.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\funnel.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\heatmap.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\heatmap.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\map.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\map.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\no-data-to-display.js" />
+    <Content Include="utf8-net\third-party\highcharts\modules\no-data-to-display.src.js" />
+    <Content Include="utf8-net\third-party\highcharts\themes\dark-blue.js" />
+    <Content Include="utf8-net\third-party\highcharts\themes\dark-green.js" />
+    <Content Include="utf8-net\third-party\highcharts\themes\gray.js" />
+    <Content Include="utf8-net\third-party\highcharts\themes\grid.js" />
+    <Content Include="utf8-net\third-party\highcharts\themes\skies.js" />
+    <Content Include="utf8-net\third-party\jquery-1.10.2.js" />
+    <Content Include="utf8-net\third-party\jquery-1.10.2.min.js" />
+    <Content Include="utf8-net\third-party\snapscreen\UEditorSnapscreen.exe" />
+    <Content Include="utf8-net\third-party\SyntaxHighlighter\shCore.js" />
+    <Content Include="utf8-net\third-party\SyntaxHighlighter\shCoreDefault.css" />
+    <Content Include="utf8-net\third-party\video-js\video-js.css" />
+    <Content Include="utf8-net\third-party\video-js\video-js.min.css" />
+    <Content Include="utf8-net\third-party\video-js\video-js.swf" />
+    <Content Include="utf8-net\third-party\video-js\video.dev.js" />
+    <Content Include="utf8-net\third-party\video-js\video.js" />
+    <Content Include="utf8-net\third-party\webuploader\Uploader.swf" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.css" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.custom.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.custom.min.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.flashonly.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.flashonly.min.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.html5only.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.html5only.min.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.min.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.withoutimage.js" />
+    <Content Include="utf8-net\third-party\webuploader\webuploader.withoutimage.min.js" />
+    <Content Include="utf8-net\third-party\xss.min.js" />
+    <Content Include="utf8-net\third-party\zeroclipboard\ZeroClipboard.js" />
+    <Content Include="utf8-net\third-party\zeroclipboard\ZeroClipboard.min.js" />
+    <Content Include="utf8-net\third-party\zeroclipboard\ZeroClipboard.swf" />
+    <Content Include="utf8-net\ueditor.all.js" />
+    <Content Include="utf8-net\ueditor.all.min.js" />
+    <Content Include="utf8-net\ueditor.config.js" />
+    <Content Include="utf8-net\ueditor.parse.js" />
+    <Content Include="utf8-net\ueditor.parse.min.js" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\HomePage\Index.cshtml" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap-theme.css.map" />
+    <Content Include="Scripts\lib\bootstrap\css\bootstrap.css.map" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Scripts\lib\bootstrap\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Scripts\lib\layui\font\iconfont.eot" />
+    <Content Include="Scripts\lib\layui\font\iconfont.svg" />
+    <Content Include="Scripts\lib\layui\font\iconfont.ttf" />
+    <Content Include="Scripts\lib\layui\font\iconfont.woff" />
+    <Content Include="Views\HomePage\Question.cshtml" />
+    <Content Include="Views\HomePage\GetPage.cshtml" />
+    <Content Include="Views\HomePage\AddQuestion.cshtml" />
+    <Content Include="utf8-net\net\config.json" />
+    <Content Include="utf8-net\net\controller.ashx" />
+    <Content Include="utf8-net\net\README.md" />
+    <Content Include="utf8-net\net\Web.config" />
+    <Content Include="utf8-net\third-party\jquery-1.10.2.min.map" />
+    <Content Include="utf8-net\third-party\video-js\font\vjs.eot" />
+    <Content Include="utf8-net\third-party\video-js\font\vjs.svg" />
+    <Content Include="utf8-net\third-party\video-js\font\vjs.ttf" />
+    <Content Include="utf8-net\third-party\video-js\font\vjs.woff" />
+    <Content Include="Views\HomePage\EditQuestion.cshtml" />
+    <Content Include="Views\Category\Index.cshtml" />
+    <Content Include="Views\Category\CateEdit.cshtml" />
+    <Content Include="Views\CommentList\Index.cshtml" />
+    <Content Include="Views\CommentList\Feedback.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-theme.min.css.map" />
+    <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BLL\BLL.csproj">
+      <Project>{bca284a1-b535-4fba-9a4d-0d32ce1c43d5}</Project>
+      <Name>BLL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common\Common.csproj">
+      <Project>{b36f876f-57ce-4844-9701-5c98aec6f754}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{eef8e8ea-ad38-4a76-8043-c766d4e2f53a}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>49380</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:49380/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.Net.Compilers.2.6.1\build\Microsoft.Net.Compilers.props'))" />
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.8\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

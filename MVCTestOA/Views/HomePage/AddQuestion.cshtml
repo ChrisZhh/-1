@@ -1,0 +1,257 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>AddQuestion</title>
+    <link href="~/Content/x-admin.css" rel="stylesheet" />
+    <script src="~/Content/lib/layui/layui.js"></script>
+    <script src="~/Scripts/x-layui.js"></script>
+    <script src="~/utf8-net/ueditor.config.js"></script>
+    <script src="~/utf8-net/ueditor.all.min.js"></script>
+    <script src="~/utf8-net/lang/zh-cn/zh-cn.js"></script>
+</head>
+<body>
+    <div class="x-body">
+        <form class="layui-form layui-form-pane">
+            <div class="layui-form-item">
+                <label for="L_title" class="layui-form-label">
+                    标题
+                </label>
+                <div class="layui-input-block">
+                    <input type="text" id="L_title" name="title" required lay-verify="title"
+                           autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-form-item layui-form-text">
+                <label for="L_content" class="layui-form-label" style="top: -2px;">
+                    描述
+                </label>
+                <div class="layui-input-block">
+
+                    <textarea ID="txtEditorContents" name="txtEditorContents" TextMode="MultiLine" Width="1000px"
+                              style="height: 400px;"></textarea>
+                    <script type="text/javascript">
+                        var editor = new UE.ui.Editor();
+                        editor.render("appendInput");
+                        //1.2.4以后可以使用一下代码实例化编辑器
+                        //UE.getEditor('myEditor')
+                    </script>
+                </div>
+
+            </div>
+            <div class="layui-form-item">
+                <div class="layui-inline">
+                    <label class="layui-form-label">
+                        所在类别
+                    </label>
+                    <div class="layui-input-block">
+                        <select lay-verify="required" id="cid">
+                            <option></option>
+                            <optgroup label="Layui相关">
+                                <option value="layui">layui</option>
+                                <option value="layer弹层">layer弹层</option>
+                                <option value="LayIM即时通讯">LayIM即时通讯</option>
+                            </optgroup>
+                            <optgroup label="其它交流">
+                                <option value="技术闲谈">技术闲谈</option>
+                                <option value="建议反馈">建议反馈</option>
+                                <option value="官方公告">官方公告</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="layui-form-item">
+
+                <input type="button" name="add" id="add" class="layui-btn" lay-filter="add" lay-submit value="立即发布" />
+            </div>
+        </form>
+    </div>
+
+    <script src="~/Scripts/jquery-1.5.1.js"></script>
+
+    <script>
+        $(function () {
+            $("#add").click(function () {
+                var title = $("#L_title").val();
+                var dd = UE.getEditor('txtEditorContents');
+                var content = dd.getContentTxt();
+
+                var category = $("#cid").val();
+                if (title == "") {
+                    alert("题目不能为空"); return;
+                }
+                if (content == "") {
+                    alert("描述不能为空"); return;
+                }
+                if (category == "") {
+                    alert("分类不能为空"); return;
+                }
+                if (title != "" && content != "" && category != "") {
+                    $.post("/HomePage/Add", { "title": title, "content": content, "category": category }, function (data) {
+                        if (data == "OK") {
+                            alert("发布成功");
+                            x_admin_close();  //关闭弹出窗口
+                            window.parent.location.reload();
+                        } else {
+                            alert("添加失败");
+                        }
+                    })
+                }
+            })
+        })
+    </script>
+    <script src="./lib/layui/layui.js" charset="utf-8">
+    </script>
+    <script src="./js/x-layui.js" charset="utf-8">
+    </script>
+    <script>
+        layui.use(['form', 'layer', 'layedit'], function () {
+            $ = layui.jquery;
+            var form = layui.form()
+                , layer = layui.layer
+                , layedit = layui.layedit;
+
+
+            layedit.set({
+                uploadImage: {
+                    url: "./upimg.json" //接口url
+                    , type: 'post' //默认post
+                }
+            })
+
+            
+
+
+        });
+    </script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <script type="text/javascript">
+
+        //实例化编辑器
+        //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+        var ue = UE.getEditor('txtEditorContents');
+
+
+        function isFocus(e) {
+            alert(UE.getEditor('editor').isFocus());
+            UE.dom.domUtils.preventDefault(e)
+        }
+        function setblur(e) {
+            UE.getEditor('editor').blur();
+            UE.dom.domUtils.preventDefault(e)
+        }
+        function insertHtml() {
+            var value = prompt('插入html代码', '');
+            UE.getEditor('editor').execCommand('insertHtml', value)
+        }
+        function createEditor() {
+            enableBtn();
+            UE.getEditor('editor');
+        }
+        function getAllHtml() {
+            alert(UE.getEditor('editor').getAllHtml())
+        }
+        function getContent() {
+            var arr = [];
+            arr.push("使用editor.getContent()方法可以获得编辑器的内容");
+            arr.push("内容为：");
+            arr.push(UE.getEditor('editor').getContent());
+            alert(arr.join("\n"));
+        }
+        function getPlainTxt() {
+            var arr = [];
+            arr.push("使用editor.getPlainTxt()方法可以获得编辑器的带格式的纯文本内容");
+            arr.push("内容为：");
+            arr.push(UE.getEditor('editor').getPlainTxt());
+            alert(arr.join('\n'))
+        }
+        function setContent(isAppendTo) {
+            var arr = [];
+            arr.push("使用editor.setContent('欢迎使用ueditor')方法可以设置编辑器的内容");
+            UE.getEditor('editor').setContent('欢迎使用ueditor', isAppendTo);
+            alert(arr.join("\n"));
+        }
+        function setDisabled() {
+            UE.getEditor('editor').setDisabled('fullscreen');
+            disableBtn("enable");
+        }
+
+        function setEnabled() {
+            UE.getEditor('editor').setEnabled();
+            enableBtn();
+        }
+
+        function getText() {
+            //当你点击按钮时编辑区域已经失去了焦点，如果直接用getText将不会得到内容，所以要在选回来，然后取得内容
+            var range = UE.getEditor('editor').selection.getRange();
+            range.select();
+            var txt = UE.getEditor('editor').selection.getText();
+            alert(txt)
+        }
+
+        function getContentTxt() {
+            var arr = [];
+            arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+            arr.push("编辑器的纯文本内容为：");
+            arr.push(UE.getEditor('editor').getContentTxt());
+            alert(arr.join("\n"));
+        }
+        function hasContent() {
+            var arr = [];
+            arr.push("使用editor.hasContents()方法判断编辑器里是否有内容");
+            arr.push("判断结果为：");
+            arr.push(UE.getEditor('editor').hasContents());
+            alert(arr.join("\n"));
+        }
+        function setFocus() {
+            UE.getEditor('editor').focus();
+        }
+        function deleteEditor() {
+            disableBtn();
+            UE.getEditor('editor').destroy();
+        }
+        function disableBtn(str) {
+            var div = document.getElementById('btns');
+            var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+            for (var i = 0, btn; btn = btns[i++];) {
+                if (btn.id == str) {
+                    UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+                } else {
+                    btn.setAttribute("disabled", "true");
+                }
+            }
+        }
+        function enableBtn() {
+            var div = document.getElementById('btns');
+            var btns = UE.dom.domUtils.getElementsByTagName(div, "button");
+            for (var i = 0, btn; btn = btns[i++];) {
+                UE.dom.domUtils.removeAttributes(btn, ["disabled"]);
+            }
+        }
+
+        function getLocalData() {
+            alert(UE.getEditor('editor').execCommand("getlocaldata"));
+        }
+
+        function clearLocalData() {
+            UE.getEditor('editor').execCommand("clearlocaldata");
+            alert("已清空草稿箱")
+        }
+    </script>
+</body>
+</html>
