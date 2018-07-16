@@ -158,6 +158,8 @@
     <Compile Include="Controllers\CommentListController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\HomePageController.cs" />
+    <Compile Include="Controllers\MemberListController.cs" />
+    <Compile Include="Controllers\TestAPIController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -288,6 +290,8 @@
     <Content Include="Images\banner.png" />
     <Content Include="Images\icon.png" />
     <Content Include="Images\logo.png" />
+    <Content Include="Images\u=3560442581,2805022138&amp;fm=27&amp;gp=0.jpg" />
+    <Content Include="MyJs\MyJs.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -303,6 +307,9 @@
     <Content Include="Content\lib\layui\font\iconfont.svg" />
     <Content Include="Content\lib\layui\font\iconfont.ttf" />
     <Content Include="Content\lib\layui\font\iconfont.woff" />
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
+    <None Include="Properties\PublishProfiles\FolderProfile1.pubxml" />
+    <None Include="Properties\PublishProfiles\ttt.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -777,6 +784,12 @@
     <Content Include="Views\Category\CateEdit.cshtml" />
     <Content Include="Views\CommentList\Index.cshtml" />
     <Content Include="Views\CommentList\Feedback.cshtml" />
+    <Content Include="Views\TestAPI\Index.cshtml" />
+    <Content Include="Views\MemberList\Index.cshtml" />
+    <Content Include="Views\MemberList\MemberShow.cshtml" />
+    <Content Include="Views\MemberList\MemberEdit.cshtml" />
+    <Content Include="Views\MemberList\MemberPassword.cshtml" />
+    <Content Include="Views\MemberList\MemberAdd.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

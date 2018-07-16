@@ -14,12 +14,12 @@ namespace Common
             {
                 return string.Empty;
             }
-            int start = pageIndex - 5;
+            int start = pageIndex - 1;
             if (start < 1)
             {
                 start = 1;
             }
-            int end = start + 9;
+            int end = start + 2;
             if (end > pageCount)
             {
                 end = pageCount;
@@ -30,9 +30,10 @@ namespace Common
 
             sb.Append(string.Format("<a href='?pageIndex={0}'>首页</a>", 1));
 
-            int x = pageIndex - 1;
-            if (x < 1) x = 1;
-            sb.Append(string.Format("<a href='?pageIndex={0}'>上一页</a>", x));
+            //int x = pageIndex - 1;
+            //if (x < 1) x = 1;
+            //if(x>=2){
+            //sb.Append(string.Format("<a href='?pageIndex={0}'>上一页</a>", x));}
 
             for (int i = start; i <= end; i++)
             {
@@ -52,9 +53,9 @@ namespace Common
 
             }
 
-            int y = pageIndex + 1;
-            if (y > pageCount) y = pageCount;
-            sb.Append(string.Format("<a href='?pageIndex={0}'>下一页</a>", y));
+            //int y = pageIndex + 1;
+            //if (y > pageCount) y = pageCount;
+            //sb.Append(string.Format("<a href='?pageIndex={0}'>下一页</a>", y));
             sb.Append(string.Format("<a href='?pageIndex={0}'>尾页</a>", pageCount));
             return sb.ToString();
         }

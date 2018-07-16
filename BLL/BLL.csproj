@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="BAnswer.cs" />
     <Compile Include="BCategory.cs" />
+    <Compile Include="BMemberList.cs" />
     <Compile Include="BQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

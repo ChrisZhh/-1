@@ -11,7 +11,9 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AdminName" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="AdminSex" Type="nchar" MaxLength="4" />
           <Property Name="AdminPwd" Type="nvarchar" MaxLength="32" Nullable="false" />
+          <Property Name="AdminDiscription" Type="nvarchar" MaxLength="100" />
           <Property Name="Mobile" Type="int" Nullable="false" />
           <Property Name="Email" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Role" Type="nvarchar" MaxLength="20" Nullable="false" />
@@ -121,6 +123,8 @@
           <Property Name="Role" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="JoinTime" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="State" Type="Boolean" Nullable="false" />
+          <Property Name="AdminSex" Type="String" MaxLength="4" FixedLength="true" Unicode="true" />
+          <Property Name="AdminDiscription" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Answer">
           <Key>
@@ -218,6 +222,8 @@
           <EntitySetMapping Name="Administrators">
             <EntityTypeMapping TypeName="TestOAModel.Administrator">
               <MappingFragment StoreEntitySet="Administrator">
+                <ScalarProperty Name="AdminDiscription" ColumnName="AdminDiscription" />
+                <ScalarProperty Name="AdminSex" ColumnName="AdminSex" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="AdminName" ColumnName="AdminName" />
                 <ScalarProperty Name="AdminPwd" ColumnName="AdminPwd" />

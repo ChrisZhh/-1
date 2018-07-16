@@ -22,5 +22,7 @@ namespace Models
         public string Role { get; set; }
         public System.DateTime JoinTime { get; set; }
         public bool State { get; set; }
+        public string AdminSex { get; set; }
+        public string AdminDiscription { get; set; }
     }
 }

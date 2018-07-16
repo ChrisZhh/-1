@@ -29,7 +29,7 @@ namespace MVCTestOA.Controllers
             if ((start == null) || end == null)
             {
                 int pageIndex = Request["pageIndex"] != null ? int.Parse(Request["pageindex"]) : 1;
-                int pageSize = 5; //每个页面两条数据
+                int pageSize = 3; //每个页面两条数据
                 int pagecount = bquestion.GetPages(pageSize);
                 pageIndex = pageIndex < 1 ? 1 : pageIndex;
                 pageIndex = pageIndex > pagecount ? pagecount : pageIndex;

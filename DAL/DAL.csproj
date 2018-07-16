@@ -52,6 +52,7 @@
   <ItemGroup>
     <Compile Include="DAnswer.cs" />
     <Compile Include="DCategory.cs" />
+    <Compile Include="DMemberList.cs" />
     <Compile Include="DQuestion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
